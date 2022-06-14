@@ -1,3 +1,9 @@
-.App-header{
+.titulo{
+  color: green;
+  text-align: center;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.nav-link{
   color: green;
 }
