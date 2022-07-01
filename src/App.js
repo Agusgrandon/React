@@ -1,23 +1,36 @@
+
+//@ts-check
 import './App.css';
+import CartWidget from './components/CartWidget';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import ItemCount from './components/ItemCount';
+import ItemList from './components/ItemList';
+
+
+
 
 function App() {
+
+  let initial = 1
+  let stock = 5
+
+  function onAdd(valor) {
+    alert("¡Agregado al carrito!")
+  }
   return (
     <div className="App">
-      <h1 className="titulo">//  Titulo  //</h1>
-      <ul className="nav justify-content-center">
-  <li className="nav-item">
-    <a className="nav-link" href="#">Home dos</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="#">Seccion 1</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="#">Seccion 2</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link">Seccion 3</a>
-  </li>
-</ul>
+       <header className="App-header">
+       <NavBar/>
+       <CartWidget/>
+       </header>
+       <main>
+       <br/>
+       <br/>
+       <br/>
+       <ItemListContainer greeting= "Las últimas novedades"/>
+       <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
+       </main>
     </div>
   );
 }
