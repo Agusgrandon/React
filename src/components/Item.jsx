@@ -1,24 +1,21 @@
 //@ts-check
 import React from "react";
-import ItemCount from "./ItemCount";
 import './Item.css';
+import { Link } from 'react-router-dom';
 
 
 
-export default function Item({ id, price, title, pictureURL }) {
+export default function Item({ price, title, pictureURL }) {
   function onAdd() {
     alert("¡Agregado al carrito!")
   }
   return (
-    <div className="card" style={{ width: "12rem", height: "27rem" }}>
+    <div className="card" style={{ width: "13rem", height: "23rem" }}>
       <img src={pictureURL} className="card-img-top" alt={title} />
       <div className="card-body">
-        <h5 className="producto text-center">{title} / id:{id}</h5>
-        <p className="precio text-center">Precio:{price}</p>
-        <a href={pictureURL} className="link">Ver detalles</a>
-        <br />
-        <br />
-        <ItemCount stock={5} initial={1} onAdd={onAdd} />
+        <h5 className="producto text-center">{title}</h5>
+        <p className="precio text-center">Precio ${price}</p>
+        <Link to={'/item/mates'}>Ver detalles</Link>
       </div>
     </div>
   )
